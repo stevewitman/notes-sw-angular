@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular Notes</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body ng-controller="mainCtrl">
+    <section class="columns two">
+      <div class="column">
+        <div class="note-edit">
+          <p>
+            <input type="textarea" ng-model="note.title" placeholder="Add note title" class="textarea-title"></input>
+          </p>
+          <input type="textarea" ng-model="note.body" placeholder="Add note content" class="textarea-copy"></input>
+        </div>
+      </div>
+      <div class="column">
+        <div class="note-preview">
+          <p class="title">
+            {{note.title}}
+            <button class="button-save">Save</button>
+          </p>
+          <p>
+            {{note.body}}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="columns two">
+      <div class="column" ng-repeat="note in notes">
+        <div class="note-show">
+          <button class="button-delete">X</button>
+          <p class="title">{{note.title}}</p>
+          <p>{{note.body}}</p>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
