@@ -25,7 +25,7 @@
         <div class="note-preview">
           <p class="title">
             {{note.title}}
-            <button class="button-save">Save</button>
+            <button ng-click="addNote()" class="button-save">Save</button>
           </p>
           <p>
             {{note.body}}
@@ -35,7 +35,7 @@
     </section>
 
     <section class="columns two">
-      <div class="column" ng-repeat="note in notes">
+      <div class="column" ng-repeat="note in notes.notes">
         <div class="note-show">
           <button class="button-delete">X</button>
           <p class="title">{{note.title}}</p>
